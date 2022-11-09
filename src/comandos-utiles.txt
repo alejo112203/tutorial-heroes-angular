@@ -1,0 +1,5 @@
+--se crea una aplicacion angular , dejar valores por defecto
+ng new "nombre aplicacion"
+-- se crea un componente angular (ts, html, css, spec)
+ng generate component "nombre componente"
+abreviado ng g c "nombre componente"
