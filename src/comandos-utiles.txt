@@ -5,3 +5,5 @@ ng new "nombre aplicacion"
 -- se crea un componente angular (ts, html, css, spec)
 ng generate component "nombre componente"
 abreviado ng g c "nombre componente"
+-- se crea un servicio para el acceso a datos
+ng generate service hero

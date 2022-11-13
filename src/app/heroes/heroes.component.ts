@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
-import { HEROES } from '../mock-heroes';
+import { HeroService } from '../hero.service';
+import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-heroes',
@@ -14,16 +15,30 @@ export class HeroesComponent implements OnInit {
       name:"Windstorm"
   } 
 
-  heroes = HEROES;
+  heroes: Hero[] = [];
+  
   selectedHero?: Hero;
 
-  constructor() { }
+  // Se inyecta el servicio hero service para poder acceder a los datos de los heroes
+  constructor(private heroService: HeroService, private messageService: MessageService) { }
 
+  // Se cargan los heroes al momento que se esta construyendo el componente
   ngOnInit(): void {
+    this.getHeroes();
+  }
+
+  getHeroes() {
+    // Nos suscribimos al observable de heroes para manejar la obtencion de los datos de manera asincrona
+    this.heroService.getHeroes().subscribe(heroes => {
+      this.heroes = heroes
+    });
   }
 
   onSelect(hero:Hero): void {
       this.selectedHero = hero;
+      // Se envia mensaje a servicio a servicio de mensajes
+      // Tambien ser arma un template literal con ${} que concatena el hero id a una cadena
+      this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`)
   }
 
 }
