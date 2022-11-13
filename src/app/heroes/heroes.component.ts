@@ -10,14 +10,9 @@ import { MessageService } from '../message.service';
 })
 export class HeroesComponent implements OnInit {
 
-  hero: Hero = {
-      id:1,
-      name:"Windstorm"
-  } 
-
   heroes: Hero[] = [];
   
-  selectedHero?: Hero;
+  //selectedHero?: Hero;
 
   // Se inyecta el servicio hero service para poder acceder a los datos de los heroes
   constructor(private heroService: HeroService, private messageService: MessageService) { }
@@ -34,11 +29,11 @@ export class HeroesComponent implements OnInit {
     });
   }
 
-  onSelect(hero:Hero): void {
-      this.selectedHero = hero;
-      // Se envia mensaje a servicio a servicio de mensajes
-      // Tambien ser arma un template literal con ${} que concatena el hero id a una cadena
-      this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`)
-  }
+  // onSelect(hero:Hero): void {
+  //     this.selectedHero = hero;
+  //     // Se envia mensaje a servicio a servicio de mensajes
+  //     // Tambien ser arma un template literal con ${} que concatena el hero id a una cadena
+  //     this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`)
+  // }
 
 }

@@ -7,3 +7,5 @@ ng generate component "nombre componente"
 abreviado ng g c "nombre componente"
 -- se crea un servicio para el acceso a datos
 ng generate service hero
+--crear routing     
+ng generate module app-routing --flat --module=app
