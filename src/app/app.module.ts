@@ -9,11 +9,13 @@ import { HeroesComponent } from './heroes/heroes.component';
 @NgModule({
   declarations: [
     AppComponent,
+    //Se creo el componente HeroesComponent y debe declararse en este modulo o en el que corresponda
     HeroesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    //Importe FormsModule para utilizar ngModel en input de formularios
     FormsModule
   ],
   providers: [],

@@ -1,3 +1,5 @@
+--se inicia la aplicacion en el navegador en el puerto 4200
+ng serve -o
 --se crea una aplicacion angular , dejar valores por defecto
 ng new "nombre aplicacion"
 -- se crea un componente angular (ts, html, css, spec)
