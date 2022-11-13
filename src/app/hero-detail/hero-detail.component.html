@@ -1,0 +1,10 @@
+<div *ngIf="hero">
+    <!-- | Es un pipe sirve para formatear el dato mostrado en este caso name a mayusculas -->
+    <h2>{{hero.name | uppercase}}</h2>
+    <div>id: {{hero.id}}</div>
+    <div>
+        <label for="hero-name">Hero name: </label>
+        <!-- Para utilizar ngmodel y tener comunicacion ts - html y viceversa importar FormsModule en el archivo .module del proyecto -->
+        <input id="hero-name" [(ngModel)]="hero.name" placeholder="name">
+    </div>
+</div>

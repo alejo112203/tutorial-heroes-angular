@@ -1,21 +1,12 @@
 <h2></h2>
 <ul class="heroes">
     <!-- Se agrega la clase select siempre que exista un heroe seleccionado -->
-    <li *ngFor="let hero of heroes" [class.select]="selectHero">
+    <li *ngFor="let hero of heroes" [class.select]="selectedHero">
         <button type="button" (click)="onSelect(hero)">
             <span class="badge">{{hero.id}} </span>
             <span class="name">{{hero.name}}</span>
         </button>
     </li>
 </ul>
-
-<div *ngIf="selectHero">
-    <!-- | Es un pipe sirve para formatear el dato mostrado en este caso name a mayusculas -->
-    <h2>{{selectHero.name | uppercase}}</h2>
-    <div>id: {{selectHero.id}}</div>
-    <div>
-        <label for="hero-name">Hero name: </label>
-        <!-- Para utilizar ngmodel y tener comunicacion ts - html y viceversa importar FormsModule en el archivo .module del proyecto -->
-        <input id="hero-name" [(ngModel)]="selectHero.name" placeholder="name">
-    </div>
-</div>
+<!-- Se envia el selectHero al atributo hero del componente hero detail  -->
+<app-hero-detail [hero] = "selectedHero"></app-hero-detail>
